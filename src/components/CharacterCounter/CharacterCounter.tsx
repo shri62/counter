@@ -4,50 +4,49 @@ import type { CharacterCounterProps, TextStats } from '../../types';
 import { TextInput } from '../TextInput/TextInput';
 import { StatsDisplay } from '../StatsDisplay/StatsDisplay';
 
-// create the CharacterCounter component
+// Create the CharacterCounter component
 export function CharacterCounter({
   minWords = 25,
   maxWords = 100,
   targetReadingTime = 1,
 }: CharacterCounterProps) {
 
-  // store the text entered by the user
+  // Store the text entered by the user
   const [text, setText] = useState('');
 
-  // calculate the number of characters
+  // Count the characters
   const characterCount = text.length;
 
-  // calculate the number of words
+  // Count the words
   const wordCount = text.trim()
     ? text.trim().split(/\s+/).length
     : 0;
 
-  // calculate the reading time using 200 words per minute
+  // Estimate reading time using 200 words per minute
   const readingTime = Math.ceil(wordCount / 200);
 
-  // store all statistics in one object
+  // Store statistics in one object
   const stats: TextStats = {
     characterCount,
     wordCount,
     readingTime,
   };
 
-  // update the text when the user types
+  // Update the text when the user types
   const handleTextChange = useCallback((newText: string) => {
     setText(newText);
   }, []);
 
-  // calculate progress toward the maximum word count
+  // Calculate progress toward the maximum word count
   const progress = Math.min((wordCount / maxWords) * 100, 100);
 
-  // check whether the minimum word goal is reached
+  // Check whether the minimum word goal is reached
   const goalReached = wordCount >= minWords;
 
-  // display the components and word count progress
+  // Display the app
   return (
     <main className="counter-container">
       <h1>Character Counter</h1>
-
       <p>Track your writing progress.</p>
 
       <TextInput onTextChange={handleTextChange} />
@@ -55,24 +54,16 @@ export function CharacterCounter({
       <StatsDisplay stats={stats} />
 
       <h3>Word Count Goal</h3>
+      <p>Minimum: {minWords} | Maximum: {maxWords}</p>
 
-      <p>
-        Min: {minWords} | Max: {maxWords}
-      </p>
-
-      // display the progress bar
       <progress value={progress} max={100} />
 
-      // show a message based on the word count
       {goalReached ? (
         <p>You reached your minimum word goal!</p>
       ) : (
-        <p>
-          Write {minWords - wordCount} more words to reach your goal.
-        </p>
+        <p>Write {minWords - wordCount} more words to reach your goal.</p>
       )}
 
-      // show a warning if the maximum word count is exceeded
       {wordCount > maxWords && (
         <p>You exceeded the maximum word count.</p>
       )}

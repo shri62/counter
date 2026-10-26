@@ -12,13 +12,13 @@ export function StatsDisplay({
   return (
     <section className="stats-display" aria-live="polite">
 
-      // display the character count
+
       <div className="stat-card">
         <h3>Characters</h3>
         <p>{stats.characterCount}</p>
       </div>
 
-      // display the word count
+     
       <div className="stat-card">
         <h3>Words</h3>
         <p>{stats.wordCount}</p>
