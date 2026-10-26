@@ -1,0 +1,74 @@
+
+/* style the page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+/* style the main container */
+.counter-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+/* style the heading */
+h1 {
+  color: #2563eb;
+}
+
+/* style the text input */
+.text-input textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* arrange the statistics in columns */
+.stats-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+/* style each statistics card */
+.stat-card {
+  padding: 15px;
+  text-align: center;
+  background-color: #eff6ff;
+  border-radius: 8px;
+}
+
+/* style the statistics numbers */
+.stat-card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* style the progress bar */
+progress {
+  width: 100%;
+  height: 15px;
+}
+
+/* adjust the layout for smaller screens */
+@media (max-width: 600px) {
+  .counter-container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .stats-display {
+    grid-template-columns: 1fr;
+  }
+}
