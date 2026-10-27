@@ -73,3 +73,43 @@ export default defineConfig([
 ])
 
 ```
+
+
+
+# Character Counter
+
+## About the Project
+
+This is my Per Scholas Lab 2 project. I created a Character Counter using React and TypeScript.
+
+This app helps users count characters and words while typing. It also shows the estimated reading time.
+
+## Features
+
+- Counts characters.
+- Counts words.
+- Shows reading time.
+- Shows minimum and maximum word limits.
+- Shows progress toward the word goal.
+- Works on different screen sizes.
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+- CSS
+
+## How to Run the Project
+
+1. Open the project folder in the terminal.
+2. Run `npm install`.
+3. Run `npm run dev`.
+4. Open the local URL shown in the terminal.
+
+## What I Learned
+
+In this project, I learned how to use React's `useState` hook, handle user input, pass data between components, and update the screen when the text changes.
+
+This project helped me practice React components and TypeScript.
+

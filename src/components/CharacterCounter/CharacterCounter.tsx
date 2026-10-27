@@ -46,8 +46,7 @@ export function CharacterCounter({
   // Display the app
   return (
     <main className="counter-container">
-      <h1>Character Counter</h1>
-      <p>Track your writing progress.</p>
+      
 
       <TextInput onTextChange={handleTextChange} />
 
